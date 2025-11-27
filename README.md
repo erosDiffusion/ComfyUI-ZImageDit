@@ -1,4 +1,6 @@
-ComfyUI-ZImageDit
+# ComfyUI-ZImageDit
+<img width="1024" height="1024" alt="ComfyUI-zimage-diffusers-wrapper_00002_" src="https://github.com/user-attachments/assets/eac45a4d-ad75-4a0f-9de7-b6bcf51f2292" />
+
 Alpha repo, unofficial diffusers integration of the official sdqn pipeline to run in ComfyUI
 
 - use only sdnq nodes wich you might have to install manually , the other stuf is experimental and does not work
