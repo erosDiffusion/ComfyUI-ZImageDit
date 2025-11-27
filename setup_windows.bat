@@ -8,7 +8,7 @@ python -m venv venv
 call venv\Scripts\activate
 
 REM 2. Set environment variables
-set HF_TOKEN=rbaiSlhMqLcFZBhIiQbSSQPWWMLLuXvnuQ
+set HF_TOKEN=PUT YOUR KEY HERE
 REM Optional: set CUDA paths only if needed
 REM set CUDA_HOME=C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8
 
