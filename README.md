@@ -1,4 +1,5 @@
-alpha repo.
+ComfyUI-ZImageDit
+Alpha repo, unofficial diffusers integration of the official sdqn pipeline to run in ComfyUI
 
 - use only sdnq nodes wich you might have to install manually , the other stuf is experimental and does not work
 - install_sdnq.bat might help on windows because it looks like their toml file has an issue with license (open inside the bat and change paths)
@@ -12,5 +13,9 @@ python.exe -m pip install git+https://github.com/huggingface/diffusers.git
 - some option dont work or i did not finish porting, test.
 
 enjoy
+Enrico aka ErosDiffusion
+
+you might have issues installing, but I have no time to support :D
 
 note: this does not use memory management from comfy, so use carefully. memory footprint is around 7gb vram more or less, you can safely run up to 2048x2048
+
