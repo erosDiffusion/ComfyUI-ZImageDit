@@ -11,10 +11,11 @@
 - **use only sdnq nodes** wich you might have to install manually , the other stuf is experimental and does not work
 - **install_sdnq.bat** might help on windows because it looks like their toml file has an issue with license (open inside the bat and change paths)
 - for flash attention find a whl, I did not bother yet as it's ok-ish speedwise, if you need you can try these places:
+  - seems to be **the best place to find them**: https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.5.4
+  - prebuilt wheels https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.4.10 (i have used this one)
   - prebuilt wheels  https://huggingface.co/Kijai/PrecompiledWheels/tree/main
-  - prebuilt wheels https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.4.10
   - prebuilt wheels https://huggingface.co/lldacing/flash-attention-windows-wheel/tree/main
-- compile does not work
+- compile does not work (for me)
 - you might need to **install the latest diffusers manually via git to support the pipeline** (from the embedded python folder):
 python.exe -m pip install git+https://github.com/huggingface/diffusers.git
 - check requirements for what is needed (quanto is not needed but you might have trouble as there are multiple nodes here)
