@@ -1,23 +1,28 @@
 # ComfyUI-ZImageDit
 <img width="1024" height="1024" alt="ComfyUI-zimage-diffusers-wrapper_00002_" src="https://github.com/user-attachments/assets/eac45a4d-ad75-4a0f-9de7-b6bcf51f2292" />
 
-Alpha repo, unofficial diffusers integration of the official sdqn pipeline to run in ComfyUI
+<img width="2139" height="1075" alt="image" src="https://github.com/user-attachments/assets/bac94951-c82c-46f4-ab14-089875693072" />
 
-- use only sdnq nodes wich you might have to install manually , the other stuf is experimental and does not work
-- install_sdnq.bat might help on windows because it looks like their toml file has an issue with license (open inside the bat and change paths)
-- for flash attention find a whl, i did not bother yet
-- you might need to install to latest via git to support the pipeline (from the embedded python folder):
+
+## What is this ?
+- an Alpha repo: unofficial **diffusers** integration of the official **SDNQ pipeline** to run in ComfyUI ...because i wanted to compare quality and be even more vram savy
+
+## Notes:
+- **use only sdnq nodes** wich you might have to install manually , the other stuf is experimental and does not work
+- **install_sdnq.bat** might help on windows because it looks like their toml file has an issue with license (open inside the bat and change paths)
+- for flash attention find a whl, I did not bother yet as it's ok-ish
+- compile does not work
+- you might need to **install the latest diffusers manually via git to support the pipeline** (from the embedded python folder):
 python.exe -m pip install git+https://github.com/huggingface/diffusers.git
-- 
 - check requirements for what is needed (quanto is not needed but you might have trouble as there are multiple nodes here)
 - weights are downloaded by diffusers on first run for sdnq nodes
-
 - some option dont work or i did not finish porting, test.
+- if you are on linux you are smart enought to know what to do
 
-enjoy
+Enjoy!
 Enrico aka ErosDiffusion
 
-you might have issues installing, but I have no time to support :D
+ps.: you might have issues installing, but I have no time to support :D
 
 note: this does not use memory management from comfy, so use carefully. memory footprint is around 7gb vram more or less, you can safely run up to 2048x2048
 
