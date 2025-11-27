@@ -208,6 +208,13 @@ class ZImageSDNQGenerate:
                     "step": 0.1,
                     "tooltip": "Time shift for FlowMatch scheduler. Controls sampling distribution: lower (1-2) = more noise-end sampling, higher (4-10) = more clean-end sampling. Default 3.0 is balanced"
                 }),
+                "max_sequence_length": ("INT", {
+                    "default": 1024,
+                    "min": 128,
+                    "max": 2048,
+                    "step": 128,
+                    "tooltip": "Maximum prompt token length. 1024 recommended for detailed prompts (Z-Image works best with long descriptions). 512 for faster speed"
+                }),
             },
             "optional": {
                 "custom_width": ("INT", {
@@ -243,7 +250,7 @@ class ZImageSDNQGenerate:
     FUNCTION = "generate"
     CATEGORY = "Z-Image (SDNQ)"
 
-    def generate(self, pipeline, prompt, resolution_preset, num_inference_steps, guidance_scale, seed, shift, custom_width=1024, custom_height=1024, enhance_prompt=False, unload_after_generation=False, gc_cuda=False):
+    def generate(self, pipeline, prompt, resolution_preset, num_inference_steps, guidance_scale, seed, shift, max_sequence_length, custom_width=1024, custom_height=1024, enhance_prompt=False, unload_after_generation=False, gc_cuda=False):
         import gc
         
         # Parse resolution from preset or use custom values
@@ -261,7 +268,7 @@ class ZImageSDNQGenerate:
                 print(f"Failed to parse resolution preset '{resolution_preset}': {e}. Using 1024x1024")
                 width, height = 1024, 1024
         
-        print(f"Generating image with SDNQ pipeline (shift={shift})...")
+        print(f"Generating image with SDNQ pipeline (shift={shift}, max_seq_len={max_sequence_length})...")
         
         # Note: Prompt enhancer is not available in SDNQ models (it's a separate API service)
         # Skip the enhancement attempt to avoid console spam
@@ -286,6 +293,7 @@ class ZImageSDNQGenerate:
             width=width,
             num_inference_steps=num_inference_steps,
             guidance_scale=guidance_scale,
+            max_sequence_length=max_sequence_length,
             generator=generator
         ).images[0]
         
