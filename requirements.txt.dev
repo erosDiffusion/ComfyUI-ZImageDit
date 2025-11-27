@@ -1,0 +1,8 @@
+--extra-index-url https://download.pytorch.org/whl/cu128
+# Torch installed explicitly in setup script
+# torch==2.8.0
+accelerate
+transformers>=4.56.1
+diffusers>=0.35.2
+safetensors>=0.4.0
+quanto>=0.1.0

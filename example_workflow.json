@@ -1,0 +1,30 @@
+{
+  "workflow": {
+    "nodes": [
+      {
+        "id": 1,
+        "type": "LoadZImageTurboQDiTOffline",
+        "inputs": {
+          "model_id": "Tongyi-MAI/Z-Image-Turbo",
+          "transformer_path": "quantized_models/zimage_turbo_transformer_qdit.safetensors",
+          "text_encoder_path": "quantized_models/qwen_text_encoder_qdit.safetensors",
+          "dtype": "bfloat16",
+          "device": "cuda"
+        }
+      },
+      {
+        "id": 2,
+        "type": "ZImageTurboQDiTGenerateUnload",
+        "inputs": {
+          "pipe": 1,
+          "prompt": "Young Chinese woman in red Hanfu, intricate embroidery",
+          "height": 1024,
+          "width": 1024,
+          "num_inference_steps": 9,
+          "guidance_scale": 0.0,
+          "seed": 42
+        }
+      }
+    ]
+  }
+}
