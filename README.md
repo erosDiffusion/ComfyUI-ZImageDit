@@ -6,22 +6,25 @@
 
 ## What is this ?
 - an Alpha repo: unofficial **diffusers** integration of the official **SDNQ pipeline** to run in ComfyUI ...because i wanted to compare quality and be even more vram savy
-
 ## Notes:
-- **use only sdnq nodes** wich you might have to install manually , the other stuf is experimental and does not work
+- **use only sdnq nodes**
+    you might have to install some pip packages manually, nothing too difficult
+    there are other nodes but they are experimental, ignore them (you might need quanto though)
 - **install_sdnq.bat** might help on windows because it looks like their toml file has an issue with license (open inside the bat and change paths)
-- for flash attention find a whl, I did not bother yet as it's ok-ish speedwise, if you need you can try these places:
-  - seems to be **the best place to find them**: https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.5.4
-  - prebuilt wheels https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.4.10 (i have used this one)
-  - prebuilt wheels  https://huggingface.co/Kijai/PrecompiledWheels/tree/main
-  - prebuilt wheels https://huggingface.co/lldacing/flash-attention-windows-wheel/tree/main
-- compile does not work (for me)
-- you might need to **install the latest diffusers manually via git to support the pipeline** (from the embedded python folder):
-python.exe -m pip install git+https://github.com/huggingface/diffusers.git
-- check requirements for what is needed (quanto is not needed but you might have trouble as there are multiple nodes here)
-- weights are downloaded by diffusers on first run for sdnq nodes
-- some option dont work or i did not finish porting, test.
-- only tested on windows
+- for **flash attention** find a whl, I did not bother yet as it's ok-ish speedwise, if you need you can try these places:
+  - seems to be **the best place to find them**:
+  -   https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.5.4
+  - other places
+    - prebuilt wheels https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.4.10 (i ended up using one package from here, it gives a nice speed boost, sage attention makes it slower, not sure why)
+    - prebuilt wheels  https://huggingface.co/Kijai/PrecompiledWheels/tree/main
+    - prebuilt wheels https://huggingface.co/lldacing/flash-attention-windows-wheel/tree/main
+- about **compile**: does not work (for me)
+- you **need to install the latest diffusers manually via git to support the pipeline** (from the embedded python folder):
+  `python.exe -m pip install git+https://github.com/huggingface/diffusers.git`
+- **if startup fails** check requirements for what is needed (quanto is not needed for these nodes, but for the other broken ones)
+- **weights** are downloaded by diffusers on first run for sdnq nodes, in you huggingface default cache folder unless you change it
+- **some option dont work** or i did not finish porting, test.
+- only tested on windows (but linux should be even easier)
   - Platform: Windows
   - Python version: 3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]
   - pytorch version: 2.8.0+cu128
@@ -33,12 +36,14 @@ python.exe -m pip install git+https://github.com/huggingface/diffusers.git
   - Total VRAM 10240 MB, total RAM 32560 MB
 
 
-- if you are on linux you are smart enought to know what to do
+- if you are on linux... you are smart enought to know what to do
 
 Enjoy!
 Enrico aka ErosDiffusion
 
 ps.: you might have issues installing, but I have no time to support :D
 
-note: this does not use memory management from comfy, so use carefully. memory footprint is around 7gb vram more or less, you can safely run up to 2048x2048
+note: this does not use ComfyUI memory management, so use carefully. Ißve added an option to unload but did not test it not sure it works.
+the memory footprint is around 7gb vram more or less, you can safely run up to 2048x2048
 
+´´
