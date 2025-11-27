@@ -10,7 +10,7 @@
 ## Notes:
 - **use only sdnq nodes** wich you might have to install manually , the other stuf is experimental and does not work
 - **install_sdnq.bat** might help on windows because it looks like their toml file has an issue with license (open inside the bat and change paths)
-- for flash attention find a whl, I did not bother yet as it's ok-ish hint, kijai has this one,
+- for flash attention find a whl, I did not bother yet as it's ok-ish speedwise, if you need you can try these places:
   - prebuilt wheels  https://huggingface.co/Kijai/PrecompiledWheels/tree/main
   - prebuilt wheels https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.4.10
   - prebuilt wheels https://huggingface.co/lldacing/flash-attention-windows-wheel/tree/main
