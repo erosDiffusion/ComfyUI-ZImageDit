@@ -17,6 +17,18 @@ python.exe -m pip install git+https://github.com/huggingface/diffusers.git
 - check requirements for what is needed (quanto is not needed but you might have trouble as there are multiple nodes here)
 - weights are downloaded by diffusers on first run for sdnq nodes
 - some option dont work or i did not finish porting, test.
+- only tested on windows
+  - Platform: Windows
+  - Python version: 3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]
+  - pytorch version: 2.8.0+cu128
+  - xformers version: 0.0.32.post2
+  - Set vram state to: NORMAL_VRAM
+  - Device: cuda:0 NVIDIA GeForce RTX 3080 : cudaMallocAsync
+  - ComfyUI version: 0.3.75
+  - ComfyUI frontend version: 1.33.8
+  - Total VRAM 10240 MB, total RAM 32560 MB
+
+
 - if you are on linux you are smart enought to know what to do
 
 Enjoy!
