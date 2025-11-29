@@ -1,15 +1,27 @@
 # ComfyUI-ZImageDit
-<img width="1024" height="1024" alt="ComfyUI-zimage-diffusers-wrapper_00002_" src="https://github.com/user-attachments/assets/eac45a4d-ad75-4a0f-9de7-b6bcf51f2292" />
 
+
+<img width="1024" height="1024" alt="ComfyUI-zimage-diffusers-wrapper_00002_" src="https://github.com/user-attachments/assets/eac45a4d-ad75-4a0f-9de7-b6bcf51f2292" />
 <img width="2139" height="1075" alt="image" src="https://github.com/user-attachments/assets/bac94951-c82c-46f4-ab14-089875693072" />
 
 
 ## What is this ?
-- an Alpha repo: unofficial **diffusers** integration of the official **SDNQ pipeline** to run in ComfyUI ...because i wanted to compare quality and be even more vram savy
+- an Alpha repo: unofficial **diffusers** integration of the official **SDNQ pipeline** to run in ComfyUI
+- ...because I wanted to compare quality and be even more vram savy via SDNQ which is not officially supported and experiments with parameters
+
+## What can I do with this ?
+
+Check these example LLM "Clones" , credits to the original authors (Civitai) for variety of generes, styles, media.
+
+<img width="559" height="558" alt="image" src="https://github.com/user-attachments/assets/a523c061-0dab-4cf5-85a4-a527e30fe1e7" />
+<img width="562" height="558" alt="image" src="https://github.com/user-attachments/assets/b79131d2-7794-40d1-b7b4-2f59293fb21f" />
+
+
 ## Notes:
-- **use only sdnq nodes**
+- **installation**
     you might have to install some pip packages manually, nothing too difficult
-    there are other nodes but they are experimental, ignore them (you might need quanto though)
+    at the hart you need: accelerate, the latest diffusers from source to support z-image pipeline
+    
 - **install_sdnq.bat** might help on windows because it looks like their toml file has an issue with license (open inside the bat and change paths)
 - for **flash attention** find a whl, I did not bother yet as it's ok-ish speedwise, if you need you can try these places:
   - seems to be **the best place to find them**:
@@ -24,6 +36,8 @@
 - **if startup fails** check requirements for what is needed (quanto is not needed for these nodes, but for the other broken ones)
 - **weights** are downloaded by diffusers on first run for sdnq nodes, in you huggingface default cache folder unless you change it
 - **some option dont work** or i did not finish porting, test.
+- there are **other** files in the other folders but they are experimental, ignore them (you might need quanto even or other installs)
+- internally sampling happens with flowmatching euler
 - only tested on windows (but linux should be even easier)
   - Platform: Windows
   - Python version: 3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]
@@ -38,7 +52,7 @@
 
 - if you are on linux... you are smart enought to know what to do
 
-Enjoy!
+**Enjoy!**
 Enrico aka ErosDiffusion
 
 ps.: you might have issues installing, but I have no time to support :D
