@@ -20,7 +20,7 @@ Check these example LLM "Clones" , credits to the original authors (Civitai) for
 ## Notes:
 - **installation**
     you might have to install some pip packages manually, nothing too difficult
-    at the hart you need: accelerate, the latest diffusers from source to support z-image pipeline
+    you need: accelerate, the latest diffusers from source to support z-image pipeline
  
 - **install_sdnq.bat** might help on windows because it looks like their toml file has an issue with double licensing (open inside the bat and change paths)
 - ** diffusers** to install the latest diffusers manually via git to support the pipeline **(from the embedded python folder if using portable comfyui)**:
